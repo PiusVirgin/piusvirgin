@@ -136,6 +136,8 @@ export default function Values() {
                   group-hover:text-pius-red/10
 
                   md:text-[10rem]
+                  hidden
+                  md:block
                 "
               >
                 {item.number}

@@ -58,7 +58,7 @@ export default function ImpactStory() {
       <div className="sticky top-0 h-screen flex items-center justify-center">
         {/* Background Word */}
 
-        <motion.div
+        {/* <motion.div
           key={activeMetric.label}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -79,7 +79,7 @@ export default function ImpactStory() {
           "
         >
           {activeMetric.value}
-        </motion.div>
+        </motion.div> */}
 
         <AnimatePresence mode="wait">
           {isFinal ? (
