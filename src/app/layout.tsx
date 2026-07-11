@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 
 import { inter, bauhaus, gotham, spaceGrotesk } from "@/fonts/fonts";
 import "./globals.css";
-import Header from "@/components/header/header";
+import HeaderWrapper from "@/components/header/header-wrapper";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({
         className={`${inter.variable} ${bauhaus.variable} ${gotham.variable} ${spaceGrotesk.variable}`}
       >
         <>
-          <Header />
+          <HeaderWrapper />
           {children}
           <Footer />
         </>

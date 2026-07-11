@@ -4,10 +4,11 @@ import FadeInAlways from "@/components/motion/FadeInAlways";
 import { motion } from "framer-motion";
 
 import { Phone, Mail, MapPin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 import { contactCards } from "@/lib/contact";
 
-const icons = [Phone, Mail, MapPin];
+const icons = [Phone, FaWhatsapp, Mail, MapPin, MapPin];
 
 export default function ContactInfo() {
   return (

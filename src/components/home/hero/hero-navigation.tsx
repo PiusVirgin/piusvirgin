@@ -68,13 +68,8 @@ export default function HeroNavigation({
                 >
                   {active && (
                     <motion.div
-                      layoutId="hero-progress"
-                      className="
-                        absolute
-                        inset-0
-
-                        bg-primary
-                      "
+                      layoutId={`hero-progress-${index}`} // make it unique per slide
+                      className="absolute inset-0 bg-primary"
                     />
                   )}
                 </div>

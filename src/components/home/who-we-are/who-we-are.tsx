@@ -1,5 +1,12 @@
-import RevealText from "@/components/reveal-text";
+'use client';
+
+import dynamic from "next/dynamic";
+
 import ImpactMetrics from "../impact-metrics/impact-metrics";
+
+const RevealText = dynamic(() => import("@/components/reveal-text"), {
+  ssr: false,
+});
 
 const WhoWeAre = () => {
   return (
@@ -110,7 +117,7 @@ const WhoWeAre = () => {
           deliver solutions that are innovative, reliable, and impactful
         </RevealText>
       </div>
-      <ImpactMetrics/>
+      <ImpactMetrics />
     </section>
   );
 };
