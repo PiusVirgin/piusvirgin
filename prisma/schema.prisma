@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model TransportInquiry {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+
+  fullName     String
+  company      String?
+
+  email        String
+  phone        String
+
+  pickup       String
+  destination  String
+
+  service      String
+
+  cargo        String?
+  shipmentDate String?
+
+  message      String
+
+  status       String   @default("new")
+
+  ipAddress    String?
+  userAgent    String?
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model AdminUser {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+
+  name      String
+
+  email     String   @unique
+
+  password  String
+
+  role      String   @default("admin")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model News {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  slug        String   @unique
+  excerpt     String
+  content     String
+
+  coverImage  String?
+
+  category    String
+  author      String
+
+  featured    Boolean  @default(false)
+  published   Boolean  @default(false)
+
+  readTime    Int?
+  publishedAt DateTime?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model TourInquiry {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+
+  name       String
+  email      String
+  phone      String
+  country    String?
+
+  tour       String
+
+  travelDate DateTime
+  guests     Int
+
+  message    String?
+
+  status     String   @default("new")
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model RailInquiry {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  fullName String
+  email String
+  phone String
+  country String?
+
+  departure String
+  destination String
+
+  travelDate DateTime
+  passengers Int
+
+  message String?
+
+  status String @default("new")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

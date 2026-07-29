@@ -1,7 +1,19 @@
 "use client";
 
-import { submitTourInquiry } from "@/actions/tour-inquiry";
-import { useState } from "react";
+import { useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
+
+import { toast } from "sonner";
+
+import { submitTourInquiryAction } from "@/actions/tour.actions";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import CountryPicker from "../shared/country-picker/country-picker";
+import type { Country } from "@/components/shared/country-picker/countries";
+import PhoneInput from "../shared/phone-input";
 
 interface InquiryFormProps {
   tourTitle: string;
@@ -10,78 +22,139 @@ interface InquiryFormProps {
 export default function InquiryForm({
   tourTitle,
 }: InquiryFormProps) {
-  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  async function action(formData: FormData) {
-    setLoading(true);
+  const [isPending, startTransition] = useTransition();
 
-    await submitTourInquiry(formData);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [country, setCountry] = useState<Country | null>(null);
+  const [travelDate, setTravelDate] = useState("");
+  const [guests, setGuests] = useState(1);
+  const [message, setMessage] = useState("");
 
-    setLoading(false);
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
 
-    alert("Inquiry submitted successfully");
+    startTransition(async () => {
+      const result = await submitTourInquiryAction({
+        name,
+        email,
+
+        phone: country
+          ? `${country.dialCode}${phone.replace(/\s/g, "")}`
+          : phone,
+
+        country: country?.name ?? "",
+
+        tour: tourTitle,
+        travelDate,
+        guests,
+        message,
+      });
+
+      if (!result.success) {
+        toast.error(result.message);
+        return;
+      }
+
+      toast.success(result.message);
+
+      setName("");
+      setEmail("");
+      setPhone("");
+      setCountry(null);
+      setTravelDate("");
+      setGuests(1);
+      setMessage("");
+
+      router.refresh();
+    });
   }
 
   return (
-    <form
-      action={action}
-      className="space-y-4"
-    >
-      <input
-        type="hidden"
-        name="tour"
-        value={tourTitle}
-      />
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="space-y-2">
+          <Label htmlFor="name">Full Name</Label>
 
-      <input
-        required
-        name="name"
-        placeholder="Full Name"
-        className="w-full rounded-xl border px-4 py-3"
-      />
+          <Input
+            id="name"
+            placeholder="John Doe"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
 
-      <input
-        required
-        type="email"
-        name="email"
-        placeholder="Email Address"
-        className="w-full rounded-xl border px-4 py-3"
-      />
+        <div className="space-y-2">
+          <Label htmlFor="email">Email Address</Label>
 
-      <input
-        required
-        name="phone"
-        placeholder="Phone Number"
-        className="w-full rounded-xl border px-4 py-3"
-      />
+          <Input
+            id="email"
+            type="email"
+            placeholder="john@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+      </div>
 
-      <input
-        required
-        type="date"
-        name="travelDate"
-        className="w-full rounded-xl border px-4 py-3"
-      />
+      <div className="space-y-2">
+        <Label htmlFor="phone">Phone Number</Label>
 
-      <input
-        type="number"
-        name="guests"
-        placeholder="Number of Guests"
-        className="w-full rounded-xl border px-4 py-3"
-      />
+        <PhoneInput country={country} value={phone} onChange={setPhone} />
+      </div>
 
-      <textarea
-        rows={5}
-        name="message"
-        placeholder="Special Requests"
-        className="w-full rounded-xl border px-4 py-3"
-      />
+      <div className="space-y-2">
+        <Label htmlFor="country">Country</Label>
 
-      <button
-        disabled={loading}
-        className="w-full rounded-xl bg-primary px-4 py-3 font-semibold text-white"
-      >
-        {loading ? "Submitting..." : "Send Inquiry"}
-      </button>
+        <CountryPicker value={country} onChange={setCountry} />
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="space-y-2">
+          <Label htmlFor="travelDate">Preferred Travel Date</Label>
+
+          <Input
+            id="travelDate"
+            type="date"
+            value={travelDate}
+            onChange={(e) => setTravelDate(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="guests">Number of Guests</Label>
+
+          <Input
+            id="guests"
+            type="number"
+            min={1}
+            value={guests}
+            onChange={(e) => setGuests(Number(e.target.value))}
+          />
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="message">Special Requests</Label>
+
+        <Textarea
+          id="message"
+          rows={6}
+          placeholder="Tell us anything that will help us prepare for your trip..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+      </div>
+
+      <Button type="submit" className="w-full" disabled={isPending}>
+        {isPending ? "Submitting..." : "Send Inquiry"}
+      </Button>
     </form>
   );
 }

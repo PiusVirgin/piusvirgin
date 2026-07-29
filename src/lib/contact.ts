@@ -1,7 +1,7 @@
 export const contactCards = [
   {
     title: "Call Us",
-    value: "+2349050577818",
+    value: "+2349050577818 or +2348123677838",
     description: "Speak directly with our team.",
   },
   {

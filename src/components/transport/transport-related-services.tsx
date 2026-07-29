@@ -20,7 +20,7 @@ export default function TransportRelatedServices({ currentSlug }: Props) {
         {related.map((item) => (
           <Link
             key={item.slug}
-            href={`/transport/${item.slug}`}
+            href={`/logistics-transportation/${item.slug}`}
             className="group"
           >
             <div className="overflow-hidden rounded-3xl">
