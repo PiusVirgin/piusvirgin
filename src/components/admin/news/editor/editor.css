@@ -1,7 +1,13 @@
-.ProseMirror {
+/* .ProseMirror {
   min-height: 700px;
   padding: 24px;
   outline: none;
+} */
+
+.ProseMirror{
+  min-height:500px;
+  padding:24px;
+  outline:none;
 }
 
 .ProseMirror p {

@@ -1,231 +1,164 @@
 "use client";
 
-import FadeInAlways from "@/components/motion/FadeInAlways";
-import { motion } from "framer-motion";
 import { Send } from "lucide-react";
+import { motion } from "framer-motion";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function ContactForm() {
   return (
-    <section className="pb-40">
-      <div className="mx-auto max-w-7xl px-6">
-        <div
-          className="
-            grid
-            gap-16
-            rounded-[40px]
-            border
-            border-border
-            bg-card
-            p-8
-
-            lg:grid-cols-[420px_1fr]
-            lg:p-16
-          "
-        >
+    <section id="contact-form" className="bg-white py-15 md:py-22">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="grid gap-16 lg:grid-cols-[420px_1fr]">
           {/* LEFT */}
 
-          <FadeInAlways>
-            <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-pius-red">
-                Get In Touch
-              </p>
-
-              <h2
-                className="
-                  mt-8
-                  text-5xl
-                  font-black
-                  leading-[0.9]
-                  tracking-[-0.05em]
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+          >
+            <span
+              className="
+                inline-flex
+                rounded-full
+                bg-pius-red/10
+                px-4
+                py-2
+                text-sm
+                font-semibold
+                uppercase
+                tracking-[0.25em]
+                text-pius-red
               "
+            >
+              Let's Talk
+            </span>
+
+            <h2
+              className="
+                mt-8
+                text-3xl
+                font-black
+                leading-tight
+                text-slate-900
+                md:text-5xl
+              "
+            >
+              We'd Love
+              <br />
+              To Hear
+              <span className="text-pius-red"> From You.</span>
+            </h2>
+
+            <p
+              className="
+                mt-8
+                text-lg
+                leading-9
+                text-slate-600
+              "
+            >
+              Whether you're making an enquiry, requesting a quotation, or
+              simply looking for more information, our team is always ready to
+              assist you.
+            </p>
+
+            <div
+              className="
+                mt-12
+                rounded-[32px]
+                bg-slate-50
+                p-8
+              "
+            >
+              <h3 className="font-bold text-slate-900">Why Contact Us?</h3>
+
+              <ul
+                className="
+                  mt-6
+                  space-y-4
+                  text-slate-600
+                "
               >
-                Tell us
-                <br />
-                about your
-                <br />
-                project.
-              </h2>
+                <li>✓ Professional guidance</li>
 
-              <p className="mt-8 leading-relaxed text-muted-foreground">
-                Whether you're looking for transport solutions,
-                printing, media, consulting or partnerships,
-                we'd love to hear your ideas.
-              </p>
+                <li>✓ Fast response time</li>
+
+                <li>✓ Experienced consultants</li>
+
+                <li>✓ Trusted for over 25 years</li>
+              </ul>
             </div>
-          </FadeInAlways>
+          </motion.div>
 
-          {/* FORM */}
+          {/* RIGHT */}
 
-          <FadeInAlways delay={0.15}>
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="
+              rounded-[40px]
+              border
+              border-slate-200
+              bg-white
+              p-8
+              shadow-xl
+              md:p-10
+            "
+          >
             <form className="space-y-6">
               <div className="grid gap-6 md:grid-cols-2">
-                <Input label="Full Name" />
+                <Input placeholder="Full Name" />
 
-                <Input label="Email Address" />
+                <Input type="email" placeholder="Email Address" />
               </div>
 
               <div className="grid gap-6 md:grid-cols-2">
-                <Input label="Phone Number" />
+                <Input placeholder="Phone Number" />
 
-                <Input label="Company" />
+                <Input placeholder="Subject" />
               </div>
 
-              <Input label="Subject" />
+              <Textarea rows={8} placeholder="Tell us how we can help you..." />
 
-              <div className="relative">
-                <textarea
-                  rows={7}
-                  placeholder=" "
-                  className="
-                    peer
-
-                    w-full
-
-                    rounded-3xl
-
-                    border
-
-                    border-border
-
-                    bg-transparent
-
-                    px-6
-
-                    pt-8
-
-                    pb-4
-
-                    outline-none
-
-                    transition
-
-                    focus:border-pius-red
-                  "
-                />
-
-                <label
-                  className="
-                    absolute
-
-                    left-6
-                    top-6
-
-                    bg-card
-
-                    px-1
-
-                    text-muted-foreground
-
-                    transition-all
-
-                    peer-focus:-top-3
-                    peer-focus:text-xs
-                    peer-focus:text-pius-red
-
-                    peer-[:not(:placeholder-shown)]:-top-3
-                    peer-[:not(:placeholder-shown)]:text-xs
-                  "
-                >
-                  Message
-                </label>
-              </div>
-
-              <motion.button
-                whileHover={{
-                  scale: 1.02,
-                }}
-                whileTap={{
-                  scale: 0.98,
-                }}
+              <Button
+                type="submit"
                 className="
-                  inline-flex
-
-                  items-center
-
-                  gap-3
-
+                  h-14
+                  w-full
                   rounded-full
-
                   bg-pius-red
-
-                  px-8
-
-                  py-4
-
+                  text-base
                   font-semibold
-
-                  text-white
+                  hover:bg-pius-red/90
                 "
               >
                 Send Message
-
-                <Send size={18} />
-              </motion.button>
+                <Send className="ml-2 h-5 w-5" />
+              </Button>
             </form>
-          </FadeInAlways>
+          </motion.div>
         </div>
       </div>
     </section>
-  );
-}
-
-function Input({ label }: { label: string }) {
-  return (
-    <div className="relative">
-      <input
-        placeholder=" "
-        className="
-          peer
-
-          w-full
-
-          rounded-full
-
-          border
-
-          border-border
-
-          bg-transparent
-
-          px-6
-
-          pt-7
-
-          pb-3
-
-          outline-none
-
-          transition
-
-          focus:border-pius-red
-        "
-      />
-
-      <label
-        className="
-          absolute
-
-          left-6
-          top-5
-
-          bg-card
-
-          px-1
-
-          text-muted-foreground
-
-          transition-all
-
-          peer-focus:-top-2
-          peer-focus:text-xs
-          peer-focus:text-pius-red
-
-          peer-[:not(:placeholder-shown)]:-top-2
-          peer-[:not(:placeholder-shown)]:text-xs
-        "
-      >
-        {label}
-      </label>
-    </div>
   );
 }

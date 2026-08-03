@@ -25,7 +25,8 @@ export default function RichTextEditor({
     editorProps: {
       attributes: {
         class:
-          " min-h-[400px]  bg-background p-5 outline-none focus:ring-2 focus:ring-primary overflow-y-auto",
+          // " min-h-[400px]  bg-background p-5 outline-none focus:ring-2 focus:ring-primary overflow-y-auto",
+          "prose prose-lg max-w-none focus:outline-none",
       },
     },
 
@@ -39,12 +40,20 @@ export default function RichTextEditor({
   }
 
   return (
-    <div className="rounded-xl border bg-background">
-      <EditorToolbar editor={editor} />
-
-      <div className="max-h-[700px] overflow-y-auto">
-        <EditorContent editor={editor} />
+    <div className="rounded-xl border bg-background overflow-hidden">
+      <div
+        className="
+        sticky
+        top-0
+        z-50
+        border-b
+        bg-background
+      "
+      >
+        <EditorToolbar editor={editor} />
       </div>
+
+      <EditorContent editor={editor} />
     </div>
   );
 }

@@ -9,17 +9,13 @@ export const navigation: NavGroup[] = [
     description:
       "Discover the values and principles that guide our company. Meet the team driving innovation and growth. And explore our journey and milestones over the years.",
     submenu: [
-      {
-        title: "Our Culture",
-        href: "/who-we-are/our-culture",
-        description:
-          "Discover the values and principles that guide our company.",
-      },
       // {
-      //   title: "Our Leadership",
-      //   href: "/who-we-are/leadership",
-      //   description: "Meet the team driving innovation and growth.",
+      //   title: "Our Culture",
+      //   href: "/who-we-are/our-culture",
+      //   description:
+      //     "Discover the values and principles that guide our company.",
       // },
+
       {
         title: "Our History",
         href: "/who-we-are/our-history",

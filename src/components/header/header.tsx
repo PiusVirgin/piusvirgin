@@ -217,7 +217,7 @@ export default function Header() {
                 <span className="text-pius-blue">Virgin</span>
               </p>
               <p className="text-xs text-muted-foreground">
-                Communicated Limited
+                Communications Limited
               </p>
             </div>
           </Link>

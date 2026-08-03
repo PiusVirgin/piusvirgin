@@ -1,18 +1,27 @@
-import About from '@/components/who-we-are/our-history/about'
-import Hero from '@/components/who-we-are/our-history/hero'
-import Philosophy from '@/components/who-we-are/our-history/philosophy'
-import Principles from '@/components/who-we-are/our-history/principles'
-import Story from '@/components/who-we-are/our-history/story'
+
+import Hero from '@/components/who-we-are/history/hero'
+import QuickBit from '@/components/who-we-are/history/quick-bit'
+import CompanyProfile from '@/components/who-we-are/history/company-profile'
+import Journey from '@/components/who-we-are/history/journey'
+import Beliefs from '@/components/who-we-are/history/beliefs'
+import WhatWeDoSection from "@/components/who-we-are/history/what-we-do";
+import HowWeWork from '@/components/who-we-are/history/how-we-work'
+import Values from '@/components/who-we-are/history/values'
+import HistoryCTA from '@/components/who-we-are/history/history-cta'
 
 
 const OurHistoryPage = () => {
   return (
     <>
       <Hero />
-      <About />
-      <Story />
-      <Principles />
-      <Philosophy/>
+      <QuickBit/>
+      <CompanyProfile />
+      <Journey />
+      <Beliefs />
+      <WhatWeDoSection />
+      <HowWeWork />
+      <Values/>
+      <HistoryCTA/>
     </>
   )
 }

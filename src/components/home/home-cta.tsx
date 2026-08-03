@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
 import FadeInAlways from "@/components/motion/FadeInAlways";
 
 export default function HomeCTA() {
@@ -41,20 +39,12 @@ export default function HomeCTA() {
         <div
           className="
             rounded-[48px]
-
             border
             border-black/10
-
-
-
             bg-white/60
-
-
             backdrop-blur-3xl
-
             px-8
             py-20
-
             md:px-16
             md:py-28
           "
@@ -83,14 +73,11 @@ export default function HomeCTA() {
                 mx-auto
                 mt-8
                 max-w-5xl
-
                 text-center
-
                 text-3xl
                 font-black
                 leading-[0.95]
                 tracking-tight
-
                 md:text-7xl
                 xl:text-8xl
               "
@@ -111,12 +98,9 @@ export default function HomeCTA() {
                 mx-auto
                 mt-10
                 max-w-3xl
-
                 text-center
-
                 text-lg
                 leading-relaxed
-
                 text-muted-foreground
               "
             >
@@ -133,35 +117,27 @@ export default function HomeCTA() {
             <div
               className="
                 mt-14
-
                 flex
                 flex-col
                 items-center
                 justify-center
                 gap-4
-
                 sm:flex-row
               "
             >
               <Link
-                href="/contact"
+                href="/who-we-are/contact-us"
                 className="
                   group
-
                   inline-flex
                   items-center
                   gap-3
-
                   rounded-full
-
                   bg-pius-red
-
                   px-8
                   py-4
-
                   font-medium
                   text-white
-
                   transition-all
                 "
               >
@@ -177,22 +153,15 @@ export default function HomeCTA() {
               </Link>
 
               <Link
-                href="/about"
+                href="/who-we-are"
                 className="
                   rounded-full
-
                   border
                   border-black/10
-
-
-
                   px-8
                   py-4
-
                   transition-all
-
                   hover:bg-black/5
-
                 "
               >
                 Learn More About Us
@@ -206,13 +175,10 @@ export default function HomeCTA() {
             <p
               className="
                 mt-14
-
                 text-center
                 text-sm
-
                 uppercase
                 tracking-[0.25em]
-
                 text-muted-foreground
               "
             >
