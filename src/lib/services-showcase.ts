@@ -1,60 +1,45 @@
 export const servicesShowcase = [
   {
     number: "01",
-    title: "Logistics & Transportation",
-
+    title: "Printing & Publishing",
     description:
-      "PiusVirgin logistics is a premier freight forwarding and logistics solutions provider in Nigeria. With a focus on reliability, efficiency, and personalized service, we offer tailored solutions to meet diverse client needs, ensuring timely and secure delivery across borders..",
-
-    image: "/images/service-transport.png",
-
+      "Professional publishing and print solutions for institutions, businesses and organizations.",
+    image: "/images/service-printing2.png",
+    href: "/what-we-do/printing-publishing",
+  },
+  {
+    number: "02",
+    title: "Logistics & Transportation",
+    description:
+      "Reliable freight forwarding and logistics solutions designed to keep goods moving efficiently across Nigeria and beyond.",
+    image: "/images/hero-trans.jpg",
     href: "/logistics-transportation",
   },
 
   {
-    number: "02",
-    title: "Printing and Publishing",
-
-    description:
-      "As a business enterprise, we provide institutions, deserving establishments and private sectors with magazines, books, journals, newspapers, newsletters etc",
-
-    image: "/images/service-printing.png",
-
-    href: "/what-we-do/printing-publishing",
-  },
-
-  {
     number: "03",
-    title: "TOURS AND EXCURSION",
+    title: "Tours & Excursions",
     description:
-      " Our tours and excursions are thoughtfully designed to showcase the beauty, culture, and diversity of Nigeria and West Africa. From vibrant city experiences to serene natural landscapes, we curate journeys that combine exploration, comfort, and authentic local connection.",
-
-    image: "/images/service-tours.png",
-
+      "Thoughtfully planned journeys, excursions and train experiences for students, families, institutions and business executives.",
+    image: "/images/hero-tours.jpg",
     href: "/what-we-do/tours-excursion",
   },
 
   {
     number: "04",
-    title: "HUMAN RELATIONS AND DEVELOPMENT",
-
+    title: "Human Relations & Development",
     description:
-      "We build the city in vain if we do not first build the man. Through workshops, consulting-only agreements, and speaking engagements,we’ll set your team up to be a results producing machine..",
-
-    image: "/images/service-human.png",
-
+      "Workshops, consulting and speaking engagements designed to develop people, strengthen teams and improve performance.",
+    image: "/images/hero-relations.jpg",
     href: "/what-we-do/human-relations-development",
   },
 
   {
     number: "05",
-    title: "HEALTH MANAGEMENT",
-
+    title: "Health Management",
     description:
-      "We've partnered with the industry's leading experts to ensure the education your team receives is world-class seminars, talks and services etc. ",
-
-    image: "/images/service-health.png",
-
+      "Professional seminars, talks and health-focused services delivered with support from experienced industry professionals.",
+    image: "/images/hero-health.jpg",
     href: "/what-we-do/health-management",
   },
 ];

@@ -3,13 +3,10 @@
 import { useEffect, useState } from "react";
 import slugify from "slugify";
 import { useRouter } from "next/navigation";
-
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import CoverUpload from "./cover-upload";
-import RichTextEditor from "./rich-text-editor";
 import { createNewsAction, updateNewsAction } from "@/actions/news.actions";
 import { toast } from "sonner";
+import NewsStudio from "./studio/news-studio";
 
 interface NewsFormProps {
   initialData?: {
@@ -107,94 +104,27 @@ export default function NewsForm({ initialData }: NewsFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="space-y-2">
-          <label>Title</label>
-          <Input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Article title"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label>Slug</label>
-          <Input value={slug} readOnly className="bg-muted" />
-        </div>
-      </div>
-
-      <div className="space-y-2">
-        <label>Excerpt</label>
-
-        <textarea
-          rows={4}
-          value={excerpt}
-          onChange={(e) => setExcerpt(e.target.value)}
-          className="w-full rounded-lg border p-3"
-        />
-      </div>
-
-      <div className="space-y-2">
-        <label>Content</label>
-
-        <RichTextEditor value={content} onChange={setContent} />
-      </div>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="space-y-2">
-          <label>Category</label>
-          <Input
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            placeholder="Logistics"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label>Author</label>
-          <Input
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-            placeholder="Prime Dev"
-          />
-        </div>
-      </div>
-
-      <div className="grid gap-6 md:grid-cols-2">
-        <label className="flex items-center gap-3">
-          <input
-            type="checkbox"
-            checked={featured}
-            onChange={(e) => setFeatured(e.target.checked)}
-          />
-          Featured Article
-        </label>
-
-        <label className="flex items-center gap-3">
-          <input
-            type="checkbox"
-            checked={published}
-            onChange={(e) => setPublished(e.target.checked)}
-          />
-          Publish Immediately
-        </label>
-      </div>
-
-      <div className="space-y-2">
-        <label>Read Time (minutes)</label>
-
-        <Input
-          type="number"
-          value={readTime}
-          onChange={(e) => setReadTime(Number(e.target.value))}
-        />
-      </div>
-
-      <div className="space-y-2">
-        <label>Cover Image</label>
-
-        <CoverUpload value={coverImage} onChange={setCoverImage} />
-      </div>
+      <NewsStudio
+        title={title}
+        slug={slug}
+        excerpt={excerpt}
+        content={content}
+        coverImage={coverImage}
+        category={category}
+        author={author}
+        featured={featured}
+        published={published}
+        readTime={readTime}
+        setTitle={setTitle}
+        setExcerpt={setExcerpt}
+        setContent={setContent}
+        setCoverImage={setCoverImage}
+        setCategory={setCategory}
+        setAuthor={setAuthor}
+        setFeatured={setFeatured}
+        setPublished={setPublished}
+        setReadTime={setReadTime}
+      />
 
       <div className="flex justify-end gap-4">
         <Button variant="secondary" type="button">

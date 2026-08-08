@@ -7,7 +7,7 @@ import Destinations from "@/components/rail/destinations";
 import Experience from "@/components/rail/experience";
 import Hero from "@/components/rail/hero";
 import Journey from "@/components/rail/journey";
-import Safety from "@/components/rail/safety";
+// import Safety from "@/components/rail/safety";
 import WhyRail from "@/components/rail/why-rail";
 import BookingModal from "@/components/rail/booking-modal";
 
@@ -19,7 +19,7 @@ export default function RailPage() {
       <WhyRail />
       <Experience />
       <Journey />
-      <Safety />
+      {/* <Safety /> */}
       <Destinations />
       <BookingCTA onBook={() => setBookingOpen(true)} />
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />

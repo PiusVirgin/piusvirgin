@@ -4,6 +4,7 @@ import "./editor/editor.css";
 
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import Image from "@tiptap/extension-image";
 import EditorToolbar from "./editor/editor-toolbar";
 
 interface RichTextEditorProps {
@@ -16,7 +17,14 @@ export default function RichTextEditor({
   onChange,
 }: RichTextEditorProps) {
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [
+      StarterKit,
+
+      Image.configure({
+        inline: false,
+        allowBase64: false,
+      }),
+    ],
 
     content: value,
 
@@ -24,9 +32,7 @@ export default function RichTextEditor({
 
     editorProps: {
       attributes: {
-        class:
-          // " min-h-[400px]  bg-background p-5 outline-none focus:ring-2 focus:ring-primary overflow-y-auto",
-          "prose prose-lg max-w-none focus:outline-none",
+        class: "prose prose-lg max-w-none min-h-[650px] p-8 focus:outline-none",
       },
     },
 
@@ -40,16 +46,8 @@ export default function RichTextEditor({
   }
 
   return (
-    <div className="rounded-xl border bg-background overflow-hidden">
-      <div
-        className="
-        sticky
-        top-0
-        z-50
-        border-b
-        bg-background
-      "
-      >
+    <div className="bg-background">
+      <div className="sticky top-0 z-30 border-b bg-background px-4 py-3">
         <EditorToolbar editor={editor} />
       </div>
 

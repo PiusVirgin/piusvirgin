@@ -5,12 +5,12 @@ import FadeInAlways from "@/components/motion/FadeInAlways";
 
 type BookingCTAProps = {
   onBook: () => void;
-  
+
 };
 
 export default function BookingCTA({ onBook }: BookingCTAProps) {
   return (
-    <section className="relative overflow-hidden py-48">
+    <section className="relative overflow-hidden py-10 md:py-30">
       {/* Background Glow */}
 
       <div className="absolute inset-0 overflow-hidden">

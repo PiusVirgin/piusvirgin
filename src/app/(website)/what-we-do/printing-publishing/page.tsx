@@ -13,11 +13,11 @@ const  PrintingPublishing = () => {
     <div>
       <Hero />
       <Publications/>
-      <PrintingServices />
+      {/* <PrintingServices /> */}
       <PrintingProcess />
       <EditorialMarquee />
-      <PrintingShowcase />
-      <Impact />
+      {/* <PrintingShowcase /> */}
+      {/* <Impact /> */}
       <CTA/>
 
     </div>

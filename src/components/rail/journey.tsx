@@ -6,7 +6,7 @@ import { railJourney } from "@/lib/rail";
 
 export default function Journey() {
   return (
-    <section className="relative py-40">
+    <section className="relative py-20 md:py-30">
       <div className="mx-auto max-w-5xl px-6">
         <FadeInAlways>
           <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">

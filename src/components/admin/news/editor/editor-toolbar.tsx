@@ -1,6 +1,6 @@
 "use client";
 
-import { Editor } from "@tiptap/react";
+import { Editor, useEditorState } from "@tiptap/react";
 
 import {
   Bold,
@@ -12,17 +12,30 @@ import {
   Quote,
   Undo2,
   Redo2,
+  Trash2
 } from "lucide-react";
+
 
 import EditorButton from "./editor-button";
 import EditorDivider from "./editor-divider";
 import ToolbarGroup from "./editor-group";
+import ImageUploadButton from "./image-upload-button";
 
 interface EditorToolbarProps {
   editor: Editor;
 }
 
 export default function EditorToolbar({ editor }: EditorToolbarProps) {
+  const { isImageSelected } = useEditorState({
+    editor,
+
+    selector: ({ editor }) => ({
+      isImageSelected: editor.isActive("image"),
+    }),
+  });
+
+ 
+
   return (
     <div
       className="
@@ -51,6 +64,30 @@ export default function EditorToolbar({ editor }: EditorToolbarProps) {
           active={editor.isActive("italic")}
           onClick={() => editor.chain().focus().toggleItalic().run()}
         />
+      </ToolbarGroup>
+
+      <EditorDivider />
+
+      <ToolbarGroup>
+        <ImageUploadButton editor={editor} />
+        {isImageSelected && (
+          <button
+            type="button"
+            onClick={() => editor.chain().focus().deleteSelection().run()}
+            className="
+            flex
+            items-center
+            gap-2
+            rounded-lg
+            px-3
+            py-2
+            hover:bg-red-50
+            hover:text-red-600
+          "
+          >
+            <Trash2 size={18} />
+          </button>
+        )}
       </ToolbarGroup>
 
       <EditorDivider />

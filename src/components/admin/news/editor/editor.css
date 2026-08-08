@@ -1,8 +1,4 @@
-/* .ProseMirror {
-  min-height: 700px;
-  padding: 24px;
-  outline: none;
-} */
+/*
 
 .ProseMirror{
   min-height:500px;
@@ -49,4 +45,76 @@
   border-left: 4px solid #2563eb;
   color: #64748b;
   font-style: italic;
+} */
+
+/* Main editor */
+
+.ProseMirror {
+  min-height: 650px;
+  padding: 2rem;
+  outline: none;
+}
+
+/* Paragraph spacing */
+
+.ProseMirror p {
+  margin: 1rem 0;
+  line-height: 1.9;
+}
+
+/* Headings */
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* Images */
+
+.ProseMirror img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+
+  margin: 2rem auto;
+
+  border-radius: 20px;
+
+  object-fit: cover;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.12);
+
+  transition: all .3s ease;
+}
+
+/* Image selection */
+
+.ProseMirror img.ProseMirror-selectednode {
+  outline: 3px solid #8b0000;
+}
+
+/* Blockquote */
+
+.ProseMirror blockquote {
+  border-left: 4px solid #8b0000;
+  padding-left: 1rem;
+  color: #555;
+  margin: 2rem 0;
+}
+
+/* Lists */
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding-left: 2rem;
+}
+
+/* Horizontal rule */
+
+.ProseMirror hr {
+  margin: 2rem 0;
 }

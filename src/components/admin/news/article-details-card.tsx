@@ -6,6 +6,7 @@ interface Props {
   title: string;
   slug: string;
   excerpt: string;
+
   onTitleChange: (value: string) => void;
   onExcerptChange: (value: string) => void;
 }
@@ -18,47 +19,52 @@ export default function ArticleDetailsCard({
   onExcerptChange,
 }: Props) {
   return (
-    <div className="rounded-2xl border bg-background p-6 shadow-sm">
-      <div className="mb-6">
-        <h2 className="text-xl font-bold">Article Details</h2>
+    <div className="rounded-3xl border bg-background shadow-sm">
+      <div className="border-b px-8 py-7">
+        <h2 className="text-2xl font-bold">Article Details</h2>
 
-        <p className="mt-1 text-sm text-muted-foreground">
-          Basic information about this article.
+        <p className="mt-2 text-muted-foreground">
+          Give your article a memorable title and summary.
         </p>
       </div>
 
-      <div className="space-y-6">
-        <div>
-          <label className="mb-2 block font-medium">Title</label>
+      <div className="space-y-8 p-8">
+        <div className="space-y-3">
+          <label className="font-semibold">Title</label>
 
           <Input
             value={title}
+            placeholder="Write your article title..."
             onChange={(e) => onTitleChange(e.target.value)}
-            placeholder="Article title"
+            className="h-14 rounded-xl text-lg"
           />
         </div>
 
-        <div>
-          <label className="mb-2 block font-medium">Slug</label>
+        <div className="space-y-3">
+          <label className="font-semibold">Slug</label>
 
-          <Input value={slug} readOnly className="bg-muted" />
+          <div className="rounded-xl border bg-muted px-5 py-4 text-muted-foreground">
+            {slug}
+          </div>
         </div>
 
-        <div>
-          <label className="mb-2 block font-medium">Excerpt</label>
+        <div className="space-y-3">
+          <label className="font-semibold">Excerpt</label>
 
           <textarea
             rows={5}
             value={excerpt}
             onChange={(e) => onExcerptChange(e.target.value)}
+            placeholder="Short summary of the article..."
             className="
               w-full
               rounded-xl
               border
               p-4
               outline-none
-              focus:ring-2
-              focus:ring-primary
+              resize-none
+              transition
+              focus:border-primary
             "
           />
         </div>

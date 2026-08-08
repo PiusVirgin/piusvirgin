@@ -131,8 +131,6 @@ export default function Hero() {
                 tracking-[-0.06em]
 
                 md:text-[7rem]
-                xl:text-[10rem]
-                2xl:text-[11rem]
               "
             >
               ADVANCED
@@ -190,7 +188,7 @@ export default function Hero() {
               </Link>
 
               <Link
-                href="#services"
+                href="/what-we-do"
                 className="
                   inline-flex
                   h-14
@@ -233,7 +231,7 @@ export default function Hero() {
 
             hidden
 
-            xl:block
+
           "
         >
           <div

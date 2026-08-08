@@ -13,7 +13,7 @@ export default function Destinations() {
 
   return (
     <>
-      <section className="relative py-40">
+      <section className="relative py-20 md:py-30">
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <FadeInAlways>
             <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">
@@ -27,7 +27,7 @@ export default function Destinations() {
             mt-6
             max-w-5xl
             text-3xl
-           
+
             font-black
 
             leading-[0.9]

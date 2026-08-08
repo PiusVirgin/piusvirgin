@@ -2,31 +2,31 @@ export const publications = [
   {
     title: "Magazines",
     category: "Editorial",
-    image: "/images/publication1.jpg",
+    image: "/images/pix23.png",
   },
   {
     title: "Books",
     category: "Publishing",
-    image: "/images/publication2.jpg",
+    image: "/images/pix25.png",
   },
   {
     title: "Company Profile",
     category: "Corporate",
-    image: "/images/publication3.jpg",
+    image: "/images/pix29.png",
   },
   {
     title: "Annual Reports",
     category: "Business",
-    image: "/images/publication4.jpg",
+    image: "/images/pix28.png",
   },
   {
     title: "Brochures",
     category: "Marketing",
-    image: "/images/publication5.jpg",
+    image: "/images/pix26.png",
   },
   {
     title: "Journals",
     category: "Research",
-    image: "/images/publication6.jpg",
+    image: "/images/pix27.png",
   },
 ];

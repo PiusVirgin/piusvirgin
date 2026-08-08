@@ -6,7 +6,7 @@ export const railFeatures = [
     title: "Maximum Security",
     description:
       "Every rail journey is supported by trained personnel and coordinated security agencies, ensuring passengers travel with confidence from departure to arrival.",
-    image: "/images/rail-security.jpg",
+    image: "/images/train2.png",
   },
 
   {
@@ -14,7 +14,7 @@ export const railFeatures = [
     title: "Affordable Transportation",
     description:
       "Rail offers one of the most cost-effective means of transporting individuals, families and organizations across Nigeria.",
-    image: "/images/rail-affordable.jpg",
+    image: "/images/train3.png",
   },
 
   {
@@ -30,7 +30,7 @@ export const railFeatures = [
     title: "Nationwide Coverage",
     description:
       "Connecting major cities and destinations while supporting tourism, education and business across Nigeria.",
-    image: "/images/rail-network.jpg",
+    image: "/images/train4.png",
   },
 
   {
@@ -38,7 +38,7 @@ export const railFeatures = [
     title: "Excursions & Group Travel",
     description:
       "Specially organized rail experiences for schools, institutions, families and corporate organizations.",
-    image: "/images/rail-excursion.jpg",
+    image: "/images/train6.jpg",
   },
 ];
 

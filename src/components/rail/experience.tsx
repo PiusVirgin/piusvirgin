@@ -7,7 +7,7 @@ import FadeInAlways from "@/components/motion/FadeInAlways";
 
 export default function Experience() {
   return (
-    <section className="relative py-40 overflow-hidden">
+    <section className="relative py-20 md:py-30 overflow-hidden">
       {/* Glow */}
 
       <div

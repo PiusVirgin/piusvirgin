@@ -224,7 +224,7 @@ export default function Hero() {
               </Link>
 
               <Link
-                href="#services"
+                href="/what-we-do"
                 className="
                 inline-flex
 
@@ -313,7 +313,7 @@ export default function Hero() {
           "
           >
             <Image
-              src="/images/train.png"
+              src="/images/train-hero.png"
               alt="Rail Experience"
               fill
               priority
@@ -322,7 +322,7 @@ export default function Hero() {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
-            <div className="absolute bottom-10 left-10">
+            <div className="absolute bottom-10 left-10 hidden">
               <p
                 className="
                 text-xs
@@ -392,7 +392,7 @@ export default function Hero() {
 
             backdrop-blur-3xl
 
-            xl:block
+
           "
           >
             <p

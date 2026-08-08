@@ -12,7 +12,7 @@ export default function WhyRail() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative py-40">
+    <section className="relative py-20 md:py-30">
       {/* Background */}
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -94,7 +94,7 @@ blur-[180px]
           </h2>
         </FadeInAlways>
 
-        <div className="mt-24 grid gap-20 lg:grid-cols-[1fr_400px]">
+        <div className="mt-24 grid gap-20 lg:grid-cols-[1fr_600px]">
           {/* LEFT */}
 
           <div>
