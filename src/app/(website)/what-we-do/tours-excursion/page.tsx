@@ -1,5 +1,3 @@
-
-
 import ToursHero from "@/components/tours/excursion-hero";
 import ExperienceGallery from "@/components/tours/experience-gallery";
 import InquiryForm from "@/components/tours/inquiry-form";

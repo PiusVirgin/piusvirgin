@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const experiences = [
   {
     src: "/assets/tours/journey4.jpg",
-    alt: "Passengers travelling inside a PiusVirgin excursion train",
+    alt: "Passengers traveling inside a PiusVirgin excursion train",
     label: "The Journey",
     title: "Travel in comfort.",
   },

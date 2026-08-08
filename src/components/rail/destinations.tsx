@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
 import FadeInAlways from "@/components/motion/FadeInAlways";
 import { destinations } from "@/lib/rail";
 
